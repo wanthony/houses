@@ -1,0 +1,20 @@
+<%= form_for house, :html => {:class => 'form-horizontal'} do |f| %>
+  <%= control_group do %>
+    <%= f.label :name, :class => 'control-label' %>
+    <%= controls do %>
+      <%= f.text_field :name, :class => 'span5' %>
+    <% end -%>
+  <% end -%>
+  <%= control_group do %>
+    <%= f.label :address, :class => 'control-label' %>
+    <%= controls do %>
+      <%= f.text_field :address, :class => 'span5' %>
+    <% end %>
+  <% end %>
+  <%= control_group do %>
+    <%= f.label :description, :class => 'control-label' %>
+    <%= controls do %>
+      <%= f.text_area :description, :class => 'span5' %>
+    <% end %>
+  <% end %>
+<% end %>
