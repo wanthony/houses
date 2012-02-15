@@ -12,9 +12,18 @@
     <% end %>
   <% end %>
   <%= control_group do %>
+    <%= f.label :rating, :class => 'control-label' %>
+    <%= controls do %>
+      <%= f.select :rating, [0, 1, 2, 3, 4, 5], {}, :class => 'span1' %>
+    <% end %>
+  <% end %>
+  <%= control_group do %>
     <%= f.label :description, :class => 'control-label' %>
     <%= controls do %>
       <%= f.text_area :description, :class => 'span5' %>
     <% end %>
+  <% end %>
+  <%= div :class => 'form-actions' do %>
+    <%= f.submit :Submit, :class => 'btn btn-primary' %>
   <% end %>
 <% end %>
