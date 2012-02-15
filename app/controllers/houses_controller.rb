@@ -18,4 +18,10 @@ class HousesController < ApplicationController
     end
   end
 
+  def destroy
+    p params
+    House.find(params[:id]).delete
+    flash[:notice] = "The house was successfully deleted."
+    redirect_to :action => :index
+  end
 end
