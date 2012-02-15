@@ -6,4 +6,16 @@ class HousesController < ApplicationController
   def new
     @house = House.new
   end
+
+  def create
+  	@house = House.new(params[:house])
+
+  	if @house.save
+  		flash[:success] = "House has been successfully saved!"
+      redirect_to 'houses#index'
+    else
+      flash[:error] = "House could not be saved!"
+    end
+  end
+
 end
