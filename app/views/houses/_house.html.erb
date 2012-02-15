@@ -1,0 +1,26 @@
+<%= row :class => 'house' do %>
+  <%= columns 9 do %>
+    <h2><%= house.name %></h2>
+  <% end -%>
+    <%= columns 5 do %>
+      <strong>Address</strong><br />
+      <%= house.address %>
+    <% end -%>
+    <%= columns 2 do %>
+      <strong>Rating</strong><br />
+      <%= house.rating %>
+    <% end -%>
+    <%= columns 1 do %>
+      <%= div :class => 'btn-group' do %>
+      <a class="btn dropdown-toggle" href="#"><span class="icon-cog"></span></a>
+      <ul class="dropdown-menu">
+        <li><%= link_to '<i class="icon-pencil"></i>Edit'.html_safe, edit_house_path(house) %></li>
+        <li><%= link_to '<i class="icon-trash"></i>Delete'.html_safe, house_path(house), :method => :delete %></li>
+      </ul>
+      <% end -%>
+    <% end %>
+    <%= columns 9 do %>
+      <strong>Description</strong><br />
+      <%= house.description %>
+    <% end -%>
+<% end -%>
